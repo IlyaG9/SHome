@@ -38,8 +38,8 @@ public class Main {
 
     private static void initBeans2() {
         Property property = new Property();
-       // property.setArduinoURL("http://192.168.0.177");
-        property.setArduinoURL("http://192.168.0.9:8080/test.html");
+        property.setArduinoURL("http://192.168.0.177");
+       // property.setArduinoURL("http://192.168.0.9:8080/test.html");
         property.setProgramTitle("Smart Home System");
         property.setRunUpdateTime(2000);
         property.setUpdateTime(3000);
