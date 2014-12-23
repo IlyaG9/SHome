@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+">
+    <bean id="property" class="ru.shome.bean.Property" scope="singleton">
+        <property name="arduinoURL" value="http://192.168.0.177"/>
+        <property name="programTitle" value="Smart Home System"/>
+        <property name="runUpdateTime" value="2000"/>
+        <property name="updateTime" value="3000"/>
+    </bean>
+</beans>
