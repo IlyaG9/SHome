@@ -24,24 +24,31 @@ public class Main {
 
     public static void main(String[] args) {
         initBeans2();
-        showMainForm();
         startServices();
     }
 
     private static void startServices() {
         Thread updateTemperature = new Thread(new TemperatureService(pr.getArduinoURL()));
         updateTemperature.start();
-        Thread updateGPIO = new Thread(new GPIOSevice());
-        updateGPIO.start();
+        String osName = System.getProperty("os.name");
+        System.out.println(osName);
+        if (osName.equals("Linux")) {
+            Thread updateGPIO = new Thread(new GPIOSevice());
+            updateGPIO.start();
+        } else if (osName.contains("Windows")) {
+            showMainForm();
+        }
+
     }
 
     private static void initBeans2() {
-        Property property=new Property();
+        Property property = new Property();
         property.setArduinoURL("http://192.168.0.177");
+        //property.setArduinoURL("http://localhost:8080/test.html");
         property.setProgramTitle("Smart Home System");
         property.setRunUpdateTime(2000);
         property.setUpdateTime(3000);
-        pr=property;
+        pr = property;
     }
 
     private static void initBeans() {

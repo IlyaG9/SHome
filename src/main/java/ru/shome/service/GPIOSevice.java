@@ -27,7 +27,6 @@ public class GPIOSevice implements Runnable {
 
     @Override
     public void run() {
-
         try {
             while (true) {
                 pin.high();
