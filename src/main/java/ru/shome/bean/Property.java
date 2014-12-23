@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.shome.bean;
 
 /**
@@ -18,6 +13,26 @@ public class Property {
     Double liveRoomTemperature;
     Double holeTemperature;
     Double boilerTemperature;
+    Double temperatureBoilerOn;
+    Double temperatureBoilerOff;
+
+    public Double getTemperatureBoilerOn() {
+        return temperatureBoilerOn;
+    }
+
+    public void setTemperatureBoilerOn(Double temperatureBoilerOn) {
+        this.temperatureBoilerOn = temperatureBoilerOn;
+    }
+
+    public Double getTemperatureBoilerOff() {
+        return temperatureBoilerOff;
+    }
+
+    public void setTemperatureBoilerOff(Double temperatureBoilerOff) {
+        this.temperatureBoilerOff = temperatureBoilerOff;
+    }
+    
+    
 
     public Double getBoilerTemperature() {
         return boilerTemperature;

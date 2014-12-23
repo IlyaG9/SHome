@@ -7,11 +7,7 @@ package ru.shome.view;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.JLabel;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import ru.shome.Main;
-import ru.shome.bean.Property;
 
 /**
  *

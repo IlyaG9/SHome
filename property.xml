@@ -9,5 +9,8 @@
         <property name="programTitle" value="Smart Home System"/>
         <property name="runUpdateTime" value="2000"/>
         <property name="updateTime" value="3000"/>
+        <property name="boilerTemperature" value="0"/>
+        <property name="temperatureBoilerOn" value="25"/>
+        <property name="temperatureBoilerOff" value="20"/>
     </bean>
 </beans>

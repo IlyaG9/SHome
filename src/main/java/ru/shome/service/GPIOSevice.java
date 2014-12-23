@@ -5,8 +5,9 @@ import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Timer;
+import java.util.TimerTask;
+import ru.shome.Main;
 
 /**
  * 19.12.2014
@@ -17,20 +18,26 @@ public class GPIOSevice implements Runnable {
 
     final GpioController gpio = GpioFactory.getInstance();
 
-    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "Nasos", PinState.LOW);
+    final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "Pump", PinState.LOW);
 
     @Override
     public void run() {
-        try {
-            while (true) {
-                pin.high();
-                Thread.sleep(1000);
-                pin.low();
-                Thread.sleep(2000);
+        Timer timer = new Timer();
+        TimerTask ttask = new TimerTask() {
+
+            @Override
+            public void run() {
+                if (Main.pr.getBoilerTemperature() > Main.pr.getTemperatureBoilerOn()) {
+                    pin.high();
+                    System.out.println("Pump on");
+                }
+                if (Main.pr.getBoilerTemperature() < Main.pr.getTemperatureBoilerOff()) {
+                    pin.low();
+                    System.out.println("Pump off");
+                }
             }
-        } catch (InterruptedException ex) {
-            Logger.getLogger(GPIOSevice.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        };
+        timer.scheduleAtFixedRate(ttask, Main.pr.getRunUpdateTime(), Main.pr.getUpdateTime());
     }
 
 }

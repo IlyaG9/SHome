@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.shome;
 
 import java.awt.EventQueue;
@@ -43,11 +38,14 @@ public class Main {
 
     private static void initBeans2() {
         Property property = new Property();
-        property.setArduinoURL("http://192.168.0.177");
-        //property.setArduinoURL("http://localhost:8080/test.html");
+       // property.setArduinoURL("http://192.168.0.177");
+        property.setArduinoURL("http://192.168.0.9:8080/test.html");
         property.setProgramTitle("Smart Home System");
         property.setRunUpdateTime(2000);
         property.setUpdateTime(3000);
+        property.setBoilerTemperature(Double.valueOf("0"));
+        property.setTemperatureBoilerOff(Double.valueOf("20"));
+        property.setTemperatureBoilerOn(Double.valueOf("25"));
         pr = property;
     }
 
