@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import ru.shome.bean.Property;
 import ru.shome.service.GPIOSevice;
+import ru.shome.service.SMSService;
 import ru.shome.service.TemperatureService;
 import ru.shome.view.MainView;
 
@@ -25,6 +26,8 @@ public class Main {
     private static void startServices() {
         Thread updateTemperature = new Thread(new TemperatureService(pr.getArduinoURL()));
         updateTemperature.start();
+        Thread runSMSReport=new Thread(new SMSService());
+        runSMSReport.start();
         String osName = System.getProperty("os.name");
         System.out.println(osName);
         if (osName.equals("Linux")) {
@@ -46,6 +49,10 @@ public class Main {
         property.setBoilerTemperature(Double.valueOf("0"));
         property.setTemperatureBoilerOff(Double.valueOf("20"));
         property.setTemperatureBoilerOn(Double.valueOf("25"));
+        property.setGmailAccaunt("ilya.golovachev9@gmail.com");
+        property.setGmailAccauntPassword("152909qw");
+        property.setSmsruAccauntToSendSMS("e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru");
+        property.setIntervalToSendReports(86400000);
         pr = property;
     }
 

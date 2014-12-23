@@ -5,16 +5,28 @@ package ru.shome.bean;
  * @author Hot
  */
 public class Property {
-    
-    String programTitle;
-    String arduinoURL;
-    Integer runUpdateTime;
-    Integer updateTime;
-    Double liveRoomTemperature;
-    Double holeTemperature;
-    Double boilerTemperature;
-    Double temperatureBoilerOn;
-    Double temperatureBoilerOff;
+
+    private String programTitle;
+    private String arduinoURL;
+    private Integer runUpdateTime;
+    private Integer updateTime;
+    private Double liveRoomTemperature;
+    private Double holeTemperature;
+    private Double boilerTemperature;
+    private Double temperatureBoilerOn;
+    private Double temperatureBoilerOff;
+    private String gmailAccaunt;
+    private String gmailAccauntPassword;
+    private String smsruAccauntToSendSMS;
+    private Integer intervalToSendReports;
+
+    public String getSmsruAccauntToSendSMS() {
+        return smsruAccauntToSendSMS;
+    }
+
+    public void setSmsruAccauntToSendSMS(String smsruAccauntToSendSMS) {
+        this.smsruAccauntToSendSMS = smsruAccauntToSendSMS;
+    }
 
     public Double getTemperatureBoilerOn() {
         return temperatureBoilerOn;
@@ -31,8 +43,6 @@ public class Property {
     public void setTemperatureBoilerOff(Double temperatureBoilerOff) {
         this.temperatureBoilerOff = temperatureBoilerOff;
     }
-    
-    
 
     public Double getBoilerTemperature() {
         return boilerTemperature;
@@ -41,8 +51,6 @@ public class Property {
     public void setBoilerTemperature(Double boilerTemperature) {
         this.boilerTemperature = boilerTemperature;
     }
-    
-    
 
     public Integer getRunUpdateTime() {
         return runUpdateTime;
@@ -60,7 +68,6 @@ public class Property {
         this.updateTime = updateTime;
     }
 
-    
     public Double getHoleTemperature() {
         return holeTemperature;
     }
@@ -68,7 +75,7 @@ public class Property {
     public void setHoleTemperature(Double holeTemperature) {
         this.holeTemperature = holeTemperature;
     }
-    
+
     public Double getLiveRoomTemperature() {
         return liveRoomTemperature;
     }
@@ -76,7 +83,7 @@ public class Property {
     public void setLiveRoomTemperature(Double liveRoomTemperature) {
         this.liveRoomTemperature = liveRoomTemperature;
     }
-    
+
     public String getProgramTitle() {
         return programTitle;
     }
@@ -85,7 +92,6 @@ public class Property {
         this.programTitle = programTitle;
     }
 
-    
     public String getArduinoURL() {
         return arduinoURL;
     }
@@ -93,5 +99,29 @@ public class Property {
     public void setArduinoURL(String arduinoURL) {
         this.arduinoURL = arduinoURL;
     }
-    
+
+    public String getGmailAccaunt() {
+        return gmailAccaunt;
+    }
+
+    public void setGmailAccaunt(String gmailAccaunt) {
+        this.gmailAccaunt = gmailAccaunt;
+    }
+
+    public String getGmailAccauntPassword() {
+        return gmailAccauntPassword;
+    }
+
+    public void setGmailAccauntPassword(String gmailAccauntPassword) {
+        this.gmailAccauntPassword = gmailAccauntPassword;
+    }
+
+    public Integer getIntervalToSendReports() {
+        return intervalToSendReports;
+    }
+
+    public void setIntervalToSendReports(Integer intervalToSendReports) {
+        this.intervalToSendReports = intervalToSendReports;
+    }
+
 }

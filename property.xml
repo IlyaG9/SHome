@@ -11,6 +11,9 @@
         <property name="updateTime" value="3000"/>
         <property name="boilerTemperature" value="0"/>
         <property name="temperatureBoilerOn" value="25"/>
-        <property name="temperatureBoilerOff" value="20"/>
+        <property name="gmailAccaunt" value="ilya.golovachev9@gmail.com"/>
+        <property name="gmailAccauntPassword" value="152909qw"/>
+        <property name="smsruAccauntToSendSMS" value="e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru"/>
+        <property name="intervalToSendReports" value="86400000"/>
     </bean>
 </beans>
