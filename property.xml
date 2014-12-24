@@ -14,6 +14,6 @@
         <property name="gmailAccaunt" value="ilya.golovachev9@gmail.com"/>
         <property name="gmailAccauntPassword" value="152909qw"/>
         <property name="smsruAccauntToSendSMS" value="e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru"/>
-        <property name="intervalToSendReports" value="86400000"/>
+        <property name="hoursToSendReports" value="10"/>
     </bean>
 </beans>

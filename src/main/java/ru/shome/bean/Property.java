@@ -18,7 +18,8 @@ public class Property {
     private String gmailAccaunt;
     private String gmailAccauntPassword;
     private String smsruAccauntToSendSMS;
-    private Integer intervalToSendReports;
+    private Integer hoursToSendReports;
+  //  private Integer intervalToSendReports;
 
     public String getSmsruAccauntToSendSMS() {
         return smsruAccauntToSendSMS;
@@ -116,12 +117,20 @@ public class Property {
         this.gmailAccauntPassword = gmailAccauntPassword;
     }
 
-    public Integer getIntervalToSendReports() {
-        return intervalToSendReports;
+//    public Integer getIntervalToSendReports() {
+//        return intervalToSendReports;
+//    }
+//
+//    public void setIntervalToSendReports(Integer intervalToSendReports) {
+//        this.intervalToSendReports = intervalToSendReports;
+//    }
+
+    public Integer getHoursToSendReports() {
+        return hoursToSendReports;
     }
 
-    public void setIntervalToSendReports(Integer intervalToSendReports) {
-        this.intervalToSendReports = intervalToSendReports;
+    public void setHoursToSendReports(Integer hoursToSendReports) {
+        this.hoursToSendReports = hoursToSendReports;
     }
 
 }

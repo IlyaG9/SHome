@@ -1,6 +1,7 @@
 package ru.shome.service;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Properties;
 import java.util.Timer;
@@ -70,7 +71,16 @@ public class SMSService implements Runnable {
                 send(subject, text);
             }
         };
-        timer.scheduleAtFixedRate(ttask, Main.pr.getRunUpdateTime(), Main.pr.getIntervalToSendReports());
+        //Текущая дата
+        Date date = new Date();
+        //Время, которое нужно добавить, чтоб получилось 10 часов следующего дня
+        long plus = (Math.abs(date.getHours() - ((long) 24)) + Main.pr.getHoursToSendReports() )* 3600000;
+        long tomorrowLong=date.getTime()+plus;
+        //Завтра 10 часов +-минуты
+        Date tomorrow=new Date(tomorrowLong);
+        //Запускаем таймер, отчет будет приходить раз в сутки (86400000 миллисекунд)
+        timer.scheduleAtFixedRate(ttask, tomorrow,  86400000);
+      //  timer.scheduleAtFixedRate(ttask, Main.pr.getRunUpdateTime(), Main.pr.getIntervalToSendReports());
     }
 
 }

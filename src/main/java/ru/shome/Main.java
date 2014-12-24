@@ -52,7 +52,8 @@ public class Main {
         property.setGmailAccaunt("ilya.golovachev9@gmail.com");
         property.setGmailAccauntPassword("152909qw");
         property.setSmsruAccauntToSendSMS("e478b263-1a42-bde4-6d97-ffadbfcc10bd+79787905941@sms.ru");
-        property.setIntervalToSendReports(86400000);
+        property.setHoursToSendReports(10);
+     //   property.setIntervalToSendReports(86400000);
         pr = property;
     }
 
