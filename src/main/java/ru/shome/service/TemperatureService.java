@@ -1,6 +1,7 @@
 package ru.shome.service;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
@@ -64,6 +65,7 @@ public class TemperatureService implements Runnable {
                 Main.pr.setLiveRoomTemperature(liveroomTemperature);
                 Double holeTemperature=indicators.get("t3");
                 Main.pr.setHoleTemperature(holeTemperature);
+                Main.pr.setLastUpdate(new Date());
                 System.out.println("Update temperature in service");
             }
         };

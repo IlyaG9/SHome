@@ -1,5 +1,7 @@
 package ru.shome.bean;
 
+import java.util.Date;
+
 /**
  *
  * @author Hot
@@ -19,7 +21,16 @@ public class Property {
     private String gmailAccauntPassword;
     private String smsruAccauntToSendSMS;
     private Integer hoursToSendReports;
-  //  private Integer intervalToSendReports;
+    private Date lastUpdate;
+
+    //  private Integer intervalToSendReports;
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
 
     public String getSmsruAccauntToSendSMS() {
         return smsruAccauntToSendSMS;
@@ -124,7 +135,6 @@ public class Property {
 //    public void setIntervalToSendReports(Integer intervalToSendReports) {
 //        this.intervalToSendReports = intervalToSendReports;
 //    }
-
     public Integer getHoursToSendReports() {
         return hoursToSendReports;
     }

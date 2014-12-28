@@ -26,17 +26,19 @@ public class Main {
     private static void startServices() {
         Thread updateTemperature = new Thread(new TemperatureService(pr.getArduinoURL()));
         updateTemperature.start();
-        Thread runSMSReport=new Thread(new SMSService());
+        SMSService smsService=new SMSService();
+        Thread runSMSReport=new Thread(smsService);
         runSMSReport.start();
         String osName = System.getProperty("os.name");
         System.out.println(osName);
         if (osName.equals("Linux")) {
             Thread updateGPIO = new Thread(new GPIOSevice());
-            updateGPIO.start();
+            updateGPIO.start();     
+            smsService.send("from:SH Linux", "System SH Started.");
         } else if (osName.contains("Windows")) {
             showMainForm();
         }
-
+        
     }
 
     private static void initBeans2() {

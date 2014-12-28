@@ -1,5 +1,6 @@
 package ru.shome.service;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -66,8 +67,10 @@ public class SMSService implements Runnable {
             @Override
             public void run() {
                 Calendar today = new GregorianCalendar();
+                SimpleDateFormat df=new SimpleDateFormat();
+                String date=df.format(Main.pr.getLastUpdate());
                 String subject = "Report: " + today.getTime().toString();
-                String text = "Температура: Спальня=" + Main.pr.getLiveRoomTemperature() + "; Зал=" + Main.pr.getHoleTemperature() + "; Котел=" + Main.pr.getBoilerTemperature();
+                String text = "Temp: LR=" + Main.pr.getLiveRoomTemperature() + "; Hole=" + Main.pr.getHoleTemperature() + "; Boiler=" + Main.pr.getBoilerTemperature()+"; LU="+date;
                 send(subject, text);
             }
         };
