@@ -14,7 +14,7 @@ import ru.shome.view.MainView;
  *
  * @author ILYA GOLOVACHEV
  */
-public class Main {
+public abstract class Main {
 
     public static Property pr = null;
 
